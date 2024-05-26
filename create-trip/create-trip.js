@@ -10,7 +10,7 @@ $(document).ready(function() {
     });
 });
 
-
+// 2 fonctions pour echanger le input et le select afin de choisir si l'on part d'un campus ou de si l'on arrive à un campus 
 document.getElementById('Campus').addEventListener('click', (event) => {
     var check = document.getElementById("Campus");
     var select = document.getElementById("depart1");

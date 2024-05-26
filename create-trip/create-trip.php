@@ -33,6 +33,7 @@
                     <div class="suggestions"></div>
                     <select name="depart2" id="depart2" class="form-input ml-2">
                         <?php
+                        // on crée le select avec les information de la bdd
                             // Sous WAMP (Windows)
                             $bdd = new PDO('mysql:host=localhost;dbname=blablaomnes;
                             charset=utf8', 'root', '');

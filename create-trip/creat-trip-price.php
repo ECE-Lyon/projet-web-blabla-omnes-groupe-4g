@@ -1,5 +1,5 @@
 <?php
-    
+    //récupération par méthodes post, pour récupérer les variables de la page d'avant. 
     if (isset($_POST["date"], $_POST["heure"], $_POST["depart1"], $_POST["arriver1"], $_POST["depart2"], $_POST["arriver2"], $_POST["nbpassager"])) {
         if($_POST["depart1"]==NULL){
             $adressdep = $_POST["depart2"];
@@ -18,7 +18,7 @@
         $nbpassager = $_POST["nbpassager"];
     
     
-
+        // recherche de la longitude et de la latitude de l'arrivée et du départ 
         $adressdep = strtr($adressdep, ' ', '+');
         $adressarr = strtr($adressarr, ' ', '+');
 
@@ -57,8 +57,8 @@
             $donnees_dep = json_decode($response_dep, true);
             $donnees_arr = json_decode($response_arr, true);
             // Vérifier si la réponse contient des données
-            echo "<br> <br>".$donnees_dep['features'].;
-            echo "<br> <br>".$donnees_arr['features'].;
+            $depcity = $donnees_dep["features"][0]["properties"]["city"];
+           echo $depcity;
             if (isset($donnees_dep['features'], $donnees_arr['features']) && !empty($donnees_dep['features']) && !empty($donnees_arr['features'])) {
 
                 $depcity = $donnees_dep["features"][0]["properties"]["city"];
